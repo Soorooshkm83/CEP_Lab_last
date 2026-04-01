@@ -1,0 +1,23 @@
+Create a complete, usable C application for Linux called Expense Splitter that can be compiled with GCC and run on a Seneca Matrix-style environment. The program must be written strictly in C, not C++, and must use only standard libraries available in a normal Linux GCC environment. Do not use external libraries, non-portable dependencies, or anything that would fail on Matrix.
+
+Build the program as a command-line or terminal-based roommate expense splitting tool. The user must be able to enter a total bill amount such as rent, groceries, or utilities, enter the number of people involved, and enter each person’s name. The program must then support weighted splitting, where each person can be assigned a custom percentage of the total instead of an equal split. For example, one roommate may pay 60 percent and another may pay 40 percent. The program must validate that the total percentage entered is exactly 100 percent before calculating results. If the percentages do not total 100 percent, the program must display a clear error and safely prompt the user again.
+
+The program must calculate how much each person owes and display the results clearly in a readable format with names and final dollar amounts rounded to two decimal places. Input must be validated carefully so the bill amount cannot be zero or negative, the number of roommates must be valid, and bad user input does not crash the program.
+
+Add a persistent ledger enhancement. Save every completed expense split into a ledger file so transaction history accumulates between runs instead of being overwritten. Each ledger entry must include a timestamp, the total bill amount, each roommate’s name, each assigned percentage, and each final amount owed. Also store roommate names in a separate file so the user does not need to re-enter the same names every time. When the program starts, it should load saved roommate data if it exists and allow the user to reuse it. If no saved data exists, handle that cleanly.
+
+Also add at least one more useful enhancement beyond the persistent ledger so the application clearly goes beyond the base version. A good option is to include a menu system that lets the user choose actions such as creating a new expense split, viewing past ledger entries, reusing saved roommate names, and exiting the program. If you think another enhancement from this feature level would produce a better result while still staying simple and usable in C on Linux, implement it, but keep the program realistic for a college assignment.
+
+Structure the code cleanly and professionally using multiple functions for input, validation, calculations, file loading, file saving, and output. Use arrays and structs where appropriate to keep the code organized. Keep the logic simple, practical, readable, and realistic for a strong college-level C assignment. Make sure file handling is correct, error-checked, and compatible with Linux.
+
+The finished result must be a single C source file that is ready to compile with gcc and run immediately in a terminal. Return only the final code with no explanation, no markdown, and no pseudocode.
+
+Then use this refinement prompt after it generates the code:
+
+Review the program you just produced and improve it as if you are preparing it for grading in a college Linux C programming course. Fix any compile issues, logic errors, unsafe input handling, weak validation, formatting problems, or file handling issues. Make sure it compiles cleanly with GCC on Linux, runs correctly in a terminal, and behaves properly on a Matrix-style environment. Keep it in a single C file, keep it strictly in C, and return only the updated final code.
+
+Then use this GitHub prompt after you test it:
+
+Commit all final local changes in this Replit project with a clear commit message describing the completed Expense Splitter application and its enhancements. Then push the local commits to the connected GitHub repository. Use the GitHub Personal Access Token stored in Replit Secrets for authentication. Only perform the push for this repository. Do not modify, delete, or access any other repositories. If the remote branch needs to be set, configure it correctly and push safely. Return a short confirmation of what git commands were executed and whether the push succeeded.
+
+One important note: do not paste your PAT into the prompt itself. Put it in Replit Secrets first, then use the push prompt.
